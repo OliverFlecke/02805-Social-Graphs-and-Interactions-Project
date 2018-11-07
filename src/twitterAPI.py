@@ -25,6 +25,6 @@ def searchLocation(airport: str, latitude: float, longitude: float,
     '''
 
     query = 'q={0}&qeocode={1},{2},{3}km&count={4}&result_type=recent&lang=en'.format(
-        airport, latitude, longitude, radius, count)
+        'airport', latitude, longitude, radius, count)
 
     return api.GetSearch(raw_query=query)
