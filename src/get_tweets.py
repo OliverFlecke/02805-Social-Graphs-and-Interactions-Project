@@ -11,7 +11,7 @@ if not os.path.exists(tweets_directory):
 
 def saveTweets(airport_id: int, tweets: list):
     with open(os.path.join(tweets_directory, str(airport_id)), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(tweets))
+        f.write(';;;\n\n'.join(tweets))
 
 if __name__ == '__main__':
     for row in tqdm(list(airports.itertuples())):

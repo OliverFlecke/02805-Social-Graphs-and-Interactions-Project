@@ -8,7 +8,9 @@ with open('twitter_config.json', 'r') as f:
 api = twitter.Api(consumer_key=config['consumer_key'],
     consumer_secret=config['consumer_secret'],
     access_token_key=config['access_token'],
-    access_token_secret=config['access_secret'])
+    access_token_secret=config['access_secret'],
+    sleep_on_rate_limit=True
+    )
 
 
 def searchLocation(airport: str, latitude: float, longitude: float,
