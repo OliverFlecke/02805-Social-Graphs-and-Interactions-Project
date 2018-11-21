@@ -2,7 +2,8 @@
 
 ## Data
 
-The desciptions of each of the columns in the data set can be seen here.
+All the data is downloaded from this [airport database](https://openflights.org/data.html).
+The descriptions of each of the columns in the data set can be seen here.
 
 ### Airports
 
