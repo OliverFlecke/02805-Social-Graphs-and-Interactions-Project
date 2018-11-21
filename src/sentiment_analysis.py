@@ -46,6 +46,7 @@ def tokenize(text: str, names: set = []) -> List[str]:
          ]
     return tokens
 
+print('Tokensize')
 tokens = { airport: tokenize(document) for airport, document in tqdm(tweets.items()) }
 
 tokens_set = { airport: set(document) for airport, document in tokens.items() }
@@ -54,7 +55,7 @@ def calculate_n_ts(tokens: list, documents: list) -> set:
     ''' Calculate the n_ts for a list of tokens given a list of documents
     '''
     return {
-        word: len([None for document in documents if word in document])
+        word: sum(1 for document in documents if word in document)
            for word in set(tokens)
     }
 
@@ -65,4 +66,4 @@ n_ts = {
 }
 
 with open('n_ts.data', 'wb') as f:
-    pickle.dump(f)
+    pickle.dump(n_ts, f)
