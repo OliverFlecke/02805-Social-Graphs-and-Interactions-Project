@@ -1,30 +1,69 @@
 {
-  "name": "02805-website",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "23.3.10",
-    "@types/node": "10.12.10",
-    "@types/react": "16.7.8",
-    "@types/react-dom": "16.0.11",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
-    "typescript": "3.2.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "name": "02805-website",
+    "version": "0.1.0",
+    "homepage": "https://oliverflecke.github.io/02805-Social-Graphs-and-Interactions-Project",
+    "private": true,
+    "dependencies": {
+        "@types/jest": "23.3.10",
+        "@types/node": "10.12.10",
+        "@types/react": "16.7.8",
+        "@types/react-dom": "16.0.11",
+        "axios": "^0.18.0",
+        "highcharts": "^6.2.0",
+        "node-sass": "^4.10.0",
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3",
+        "react-markdown": "^4.0.3",
+        "react-scripts": "2.1.1",
+        "typescript": "3.2.1"
+    },
+    "scripts": {
+        "build-scss": "npx tcm src -p **/*.scss",
+        "watch-scss": "npx tcm src -p **/*.scss -w",
+        "watch-ts": "react-scripts start",
+        "start": "concurrently npm:watch-scss npm:watch-ts",
+        "prebuild": "npm run build-scss",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "@types/highcharts": "^5.0.34",
+        "concurrently": "^4.1.0",
+        "gh-pages": "^2.0.1",
+        "husky": "^1.2.0",
+        "lint-staged": "^8.1.0",
+        "prettier": "^1.15.2",
+        "ts-lint": "^4.5.1",
+        "tslint-config-prettier": "^1.17.0",
+        "tslint-react": "^3.6.0",
+        "typed-css-modules": "^0.3.7"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,json,css,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "trailingComma": "all",
+        "tabWidth": 4,
+        "singleQuote": true
+    }
 }
