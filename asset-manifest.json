@@ -1,7 +1,13 @@
 {
-  "main.css": "static/css/main.84b36d69.css",
-  "main.css.map": "static/css/main.84b36d69.css.map",
-  "main.js": "static/js/main.9e57fa19.js",
-  "main.js.map": "static/js/main.9e57fa19.js.map",
-  "static\\media\\logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "/02805-Social-Graphs-and-Interactions-Project/static/css/main.b8a7990d.chunk.css",
+  "main.js": "/02805-Social-Graphs-and-Interactions-Project/static/js/main.140dc02a.chunk.js",
+  "main.js.map": "/02805-Social-Graphs-and-Interactions-Project/static/js/main.140dc02a.chunk.js.map",
+  "static/js/1.35c06596.chunk.js": "/02805-Social-Graphs-and-Interactions-Project/static/js/1.35c06596.chunk.js",
+  "static/js/1.35c06596.chunk.js.map": "/02805-Social-Graphs-and-Interactions-Project/static/js/1.35c06596.chunk.js.map",
+  "runtime~main.js": "/02805-Social-Graphs-and-Interactions-Project/static/js/runtime~main.842dc995.js",
+  "runtime~main.js.map": "/02805-Social-Graphs-and-Interactions-Project/static/js/runtime~main.842dc995.js.map",
+  "static/css/main.b8a7990d.chunk.css.map": "/02805-Social-Graphs-and-Interactions-Project/static/css/main.b8a7990d.chunk.css.map",
+  "index.html": "/02805-Social-Graphs-and-Interactions-Project/index.html",
+  "precache-manifest.e3d63d9f00862bc0c7ea7332ede5bf32.js": "/02805-Social-Graphs-and-Interactions-Project/precache-manifest.e3d63d9f00862bc0c7ea7332ede5bf32.js",
+  "service-worker.js": "/02805-Social-Graphs-and-Interactions-Project/service-worker.js"
 }
