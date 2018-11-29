@@ -34,7 +34,7 @@ export class BarChart extends React.PureComponent<IBarChartProps> {
         return (
             <div>
                 <div
-                    id="barchart"
+                    id='barchart'
                     style={{
                         height: '100%',
                         width: '100%',

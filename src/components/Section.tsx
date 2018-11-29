@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
+import * as styles from './Section.module.scss';
 
 export interface ISectionProps {
     filename: string;
@@ -26,6 +27,10 @@ export class Section extends React.Component<ISectionProps, ISectionState> {
             return null;
         }
 
-        return <ReactMarkdown source={this.state.data} />;
+        return (
+            <div className={styles.container}>
+                <ReactMarkdown source={this.state.data} />
+            </div>
+        );
     }
 }
