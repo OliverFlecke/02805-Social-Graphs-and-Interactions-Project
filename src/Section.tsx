@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
-
-const ReactMarkdown = require('react-markdown');
+import ReactMarkdown from 'react-markdown';
 
 export interface ISectionProps {
     filename: string;
@@ -16,8 +15,8 @@ export class Section extends React.Component<ISectionProps, ISectionState> {
         super(props);
 
         axios
-            .get(this.props.filename)
-            .then(x => this.setState({ data: x.data }));
+            .get('section/' + this.props.filename)
+            .then((x) => this.setState({ data: x.data }));
 
         this.state = {};
     }

@@ -5,7 +5,9 @@
     "rules": {
         "no-console": true,
         "newline-before-return": true,
-        "arrow-return-shorthand": true
+        "arrow-return-shorthand": true,
+        "quotemark": [true, "single", "jsx-single"],
+        "prefer-template": true
     },
     "rulesDirectory": []
 }

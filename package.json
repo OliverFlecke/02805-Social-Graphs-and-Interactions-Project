@@ -64,6 +64,8 @@
     "prettier": {
         "trailingComma": "all",
         "tabWidth": 4,
-        "singleQuote": true
+        "singleQuote": true,
+        "arrowParens": "always",
+        "jsxSingleQuote": true
     }
 }
