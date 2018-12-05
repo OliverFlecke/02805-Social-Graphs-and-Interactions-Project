@@ -4,25 +4,18 @@
     "homepage": "https://oliverflecke.github.io/02805-Social-Graphs-and-Interactions-Project",
     "private": true,
     "dependencies": {
-        "@types/jest": "23.3.10",
-        "@types/node": "10.12.10",
-        "@types/react": "16.7.8",
-        "@types/react-dom": "16.0.11",
         "axios": "^0.18.0",
         "highcharts": "^6.2.0",
-        "node-sass": "^4.10.0",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
         "react-markdown": "^4.0.3",
-        "react-router-dom": "^4.3.1",
-        "react-scripts": "2.1.1",
-        "typescript": "3.2.1"
+        "react-router-dom": "^4.3.1"
     },
     "scripts": {
         "build-scss": "npx tcm src -p **/*.scss",
         "watch-scss": "npx tcm src -p **/*.scss -w",
         "watch-ts": "react-scripts start",
-        "start": "concurrently npm:watch-scss npm:watch-ts",
+        "start": "npm run watch-ts",
         "prebuild": "npm run build-scss",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -41,18 +34,25 @@
     ],
     "devDependencies": {
         "@types/highcharts": "^5.0.34",
+        "@types/jest": "23.3.10",
+        "@types/node": "10.12.10",
+        "@types/react-dom": "16.0.11",
         "@types/react-router-dom": "^4.3.1",
         "@types/react-router-hash-link": "^1.2.0",
+        "@types/react": "16.7.8",
         "concurrently": "^4.1.0",
         "gh-pages": "^2.0.1",
         "husky": "^1.2.0",
         "lint-staged": "^8.1.0",
+        "node-sass": "^4.10.0",
         "prettier": "^1.15.2",
         "react-router-hash-link": "^1.2.1",
+        "react-scripts": "2.1.1",
         "ts-lint": "^4.5.1",
         "tslint-config-prettier": "^1.17.0",
         "tslint-react": "^3.6.0",
-        "typed-css-modules": "^0.3.7"
+        "typed-css-modules": "^0.3.7",
+        "typescript": "3.2.1"
     },
     "husky": {
         "hooks": {

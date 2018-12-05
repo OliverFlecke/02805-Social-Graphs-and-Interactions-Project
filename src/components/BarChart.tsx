@@ -27,6 +27,9 @@ export class BarChart extends React.PureComponent<IBarChartProps> {
                     text: 'Fruit eaten',
                 },
             },
+            credits: {
+                enabled: false,
+            },
         });
     }
 
