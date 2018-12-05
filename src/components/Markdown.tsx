@@ -16,7 +16,7 @@ export class Markdown extends React.Component<IMarkdownProps, IMarkdownState> {
         super(props);
 
         axios
-            .get('text/' + this.props.filename)
+            .get(`text/${this.props.filename}`)
             .then((x) => this.setState({ data: x.data }));
 
         this.state = {};

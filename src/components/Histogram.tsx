@@ -48,62 +48,38 @@ export class Histogram extends React.Component<IHistogramProps> {
             prev < current ? prev : current,
         );
         const range = max - min;
-        const width = range / bins; //size of the bins
+        const width = range / bins; // size of the bins
 
-        let bin_bottom; //place holders for the bounds of each bin
-        let bin_top;
+        let binBottom; // place holders for the bounds of each bin
+        let binTop;
 
-        //loop through the number of cells
+        // loop through the number of cells
         for (let i = 0; i < bins; i++) {
-            //set the upper and lower limits of the current cell
-            bin_bottom = min + i * width;
-            bin_top = bin_bottom + width;
+            // set the upper and lower limits of the current cell
+            binBottom = min + i * width;
+            binTop = binBottom + width;
 
-            //check for and set the x value of the bin
+            // check for and set the x value of the bin
             if (!histData[i]) {
                 histData[i] = new Array();
-                histData[i][0] = bin_bottom + width / 2;
+                histData[i][0] = binBottom + width / 2;
             }
 
-            //loop through the data to see if it fits in this bin
+            // loop through the data to see if it fits in this bin
             for (let j = 0; j < data.length; j++) {
-                let x = data[j];
+                const x = data[j];
 
-                //adjust if it's the first pass
-                i == 0 && j == 0
-                    ? (bin_bottom -= 1)
-                    : (bin_bottom = bin_bottom);
+                // adjust if it's the first pass
+                i === 0 && j === 0 ? (binBottom -= 1) : (binBottom = binBottom);
 
-                //if it fits in the bin, add it
-                if (x > bin_bottom && x <= bin_top) {
+                // if it fits in the bin, add it
+                if (x > binBottom && x <= binTop) {
                     !histData[i][1] ? (histData[i][1] = 1) : histData[i][1]++;
                 }
             }
         }
 
         return histData;
-    }
-
-    private getPercentile(data: number[], percentile: number) {
-        data.sort((a: number, b: number) => a - b);
-        const index = (percentile / 100) * data.length;
-
-        if (Math.floor(index) == index) {
-            return (data[index - 1] + data[index]) / 2;
-        } else {
-            return data[Math.floor(index)];
-        }
-    }
-
-    private getMad(data: number[]) {
-        const median = this.getPercentile(data, 50);
-        const devs = data.map((point: number) => Math.abs(point - median));
-        const mad = this.getPercentile(devs, 50);
-
-        return {
-            median: median,
-            mad: mad,
-        };
     }
 
     private getOptions(): any {

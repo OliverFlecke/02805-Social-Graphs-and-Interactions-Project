@@ -1,13 +1,14 @@
 {
     "defaultSeverity": "error",
-    "extends": ["tslint:recommended", "tslint-react"],
+    "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
     "jsRules": {},
     "rules": {
-        "no-console": true,
+        "no-console": false,
         "newline-before-return": true,
         "arrow-return-shorthand": true,
         "quotemark": [true, "single", "jsx-single"],
-        "prefer-template": true
+        "prefer-template": true,
+        "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }

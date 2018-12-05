@@ -1,8 +1,8 @@
 import Axios from 'axios';
 import React from 'react';
+import { Histogram } from '../components/Histogram';
 import { Markdown } from '../components/Markdown';
 import { Section } from './Section';
-import { Histogram } from '../components/Histogram';
 
 interface ISentiment {
     data?: number[];
@@ -14,9 +14,9 @@ export class Sentiment extends React.Component<{}, ISentiment> {
 
         this.state = {};
 
-        Axios.get('data/sentiment_all.txt').then((x) =>
+        Axios.get('data/sentiment_all.txt').then((x: any) =>
             this.setState({
-                data: x['data'].split('\n').map((x: string) => Number(x)),
+                data: x.data.split('\n').map((value: string) => Number(value)),
             }),
         );
     }
