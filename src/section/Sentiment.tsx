@@ -30,7 +30,7 @@ export class Sentiment extends React.Component<{}, ISentiment> {
     public render() {
         return (
             <section id={Section.Sentiment}>
-                <Markdown filename={'sentiment.md'} />
+                <Markdown filename={'Sentiment.md'} />
 
                 {this.renderSlick()}
 

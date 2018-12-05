@@ -32,7 +32,7 @@ class App extends Component {
                     <Sentiment />
 
                     <section id={Section.Conclusion}>
-                        <Markdown filename={'conclusion.md'} />
+                        <Markdown filename={'Conclusion.md'} />
                     </section>
                 </div>
             </BrowserRouter>
