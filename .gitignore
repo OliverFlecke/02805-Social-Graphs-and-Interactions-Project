@@ -1,4 +1,5 @@
 twitter_config.json
+data/tweets*/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
