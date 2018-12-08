@@ -15,7 +15,7 @@ export class Introduction extends React.Component {
                         className={styles.video}
                         opts={{
                             playerVars: {
-                                showinfo: 0,
+                                iv_load_policy: 3,
                             },
                         }}
                     />
