@@ -8,7 +8,7 @@ import NegativeWordCloud from '../images/Negative tweets.png';
 import PositiveWordCloud from '../images/Positive tweets.png';
 import '../styles/Slick.scss';
 import { Section } from './Section';
-import * as styles from './Sentiment.module.scss';
+import * as styles from './styles/Sentiment.module.scss';
 
 interface ISentiment {
     data?: number[];

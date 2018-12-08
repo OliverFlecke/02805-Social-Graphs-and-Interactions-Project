@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: grey;
+  background-color: #CCC;
 }
 
 section {
@@ -20,4 +20,25 @@ code {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+td {
+  min-width: 100px;
+}
+tr {
+  border: 1px solid black;
+}
+
+button {
+  border: none;
+  background: inherit;
+  font: inherit;
+  color: #4183d7;
+  cursor: pointer;
+  padding: 0;
 }

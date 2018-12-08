@@ -8,7 +8,8 @@
         "arrow-return-shorthand": true,
         "quotemark": [true, "single", "jsx-single"],
         "prefer-template": true,
-        "object-literal-sort-keys": false
+        "object-literal-sort-keys": false,
+        "interface-name": false
     },
     "rulesDirectory": []
 }

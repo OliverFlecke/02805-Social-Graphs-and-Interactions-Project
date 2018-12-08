@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import * as styles from './App.module.scss';
-import { Markdown } from './components/Markdown';
 import { Navigation } from './components/Navigation';
-import { Section } from './section/Section';
+import { Centrality } from './section/Centrality';
+import { Communities } from './section/Communities';
+import { Conclusion } from './section/Conclusion';
+import { Data } from './section/Data';
+import { Introduction } from './section/Introduction';
+import { Network } from './section/Network';
 import { Sentiment } from './section/Sentiment';
 
 class App extends Component {
@@ -13,27 +17,19 @@ class App extends Component {
                 <div className={styles.App}>
                     <Navigation />
 
-                    <section id={Section.Introduction}>
-                        <Markdown filename={'Introduction.md'} />
-                    </section>
-                    <section id={Section.Data}>
-                        <Markdown filename={'Data.md'} />
-                    </section>
-                    <section id={Section.Network}>
-                        <Markdown filename={'Network.md'} />
-                    </section>
-                    <section id={Section.Centrality}>
-                        <Markdown filename={'Centrality.md'} />
-                    </section>
-                    <section id={Section.Communities}>
-                        <Markdown filename={'Communities.md'} />
-                    </section>
+                    <div className={styles.titleContainer}>
+                        <h1 className={styles.title}>
+                            The global airport network
+                        </h1>
+                    </div>
 
+                    <Introduction />
+                    <Data />
+                    <Network />
+                    <Centrality />
+                    <Communities />
                     <Sentiment />
-
-                    <section id={Section.Conclusion}>
-                        <Markdown filename={'Conclusion.md'} />
-                    </section>
+                    <Conclusion />
                 </div>
             </BrowserRouter>
         );
