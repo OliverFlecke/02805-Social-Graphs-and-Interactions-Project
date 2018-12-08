@@ -3,15 +3,13 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Histogram } from '../components/Histogram';
 import { Markdown } from '../components/Markdown';
-import AllTokens from '../images/All tokens.png';
-import NegativeWordCloud from '../images/Negative tweets.png';
-import PositiveWordCloud from '../images/Positive tweets.png';
 import '../styles/Slick.scss';
 import { Section } from './Section';
 import * as styles from './styles/Sentiment.module.scss';
 
 interface ISentiment {
-    data?: number[];
+    data?: any;
+    normal?: any;
 }
 
 export class Sentiment extends React.Component<{}, ISentiment> {
@@ -20,10 +18,13 @@ export class Sentiment extends React.Component<{}, ISentiment> {
 
         this.state = {};
 
-        Axios.get('data/sentiment_all.txt').then((x: any) =>
+        Axios.get('data/sentiment_normalized.json').then((response: any) =>
             this.setState({
-                data: x.data.split('\n').map((value: string) => Number(value)),
+                data: response.data.series,
             }),
+        );
+        Axios.get('data/normal_distribution.json').then((response: any) =>
+            this.setState({ normal: response.data.series }),
         );
     }
 
@@ -34,9 +35,10 @@ export class Sentiment extends React.Component<{}, ISentiment> {
 
                 {this.renderSlick()}
 
-                {this.state.data ? (
+                {this.state.data && this.state.normal ? (
                     <Histogram
                         data={this.state.data}
+                        normalDistribution={this.state.normal}
                         title='Sentiment distribution'
                     />
                 ) : null}
@@ -57,13 +59,13 @@ export class Sentiment extends React.Component<{}, ISentiment> {
             <div className={styles.sliderContainer}>
                 <Slider {...settings}>
                     <div>
-                        <img src={AllTokens} />
+                        <img src={`${process.env.PUBLIC_URL}/images/wordcloud.png`} />
                     </div>
                     <div>
-                        <img src={PositiveWordCloud} />
+                        <img src={`${process.env.PUBLIC_URL}/images/wordcloud_negative.png`} />
                     </div>
                     <div>
-                        <img src={NegativeWordCloud} />
+                        <img src={`${process.env.PUBLIC_URL}/images/wordcloud_positive.png`} />
                     </div>
                 </Slider>
             </div>

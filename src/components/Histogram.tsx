@@ -3,17 +3,29 @@ import * as _ from 'lodash';
 import React from 'react';
 import * as styles from './Histogram.module.scss';
 
-interface IHistogramProps {
-    data: number[];
-    title: string;
-    bins?: number;
+interface Point {
+    x: number;
+    y: number;
 }
 
-export class Histogram extends React.Component<IHistogramProps> {
+interface IHistogramProps {
+    data: number[] | Point[];
+    title: string;
+    bins?: number;
+    isDataNormalized?: boolean;
+    normalDistribution?: Point[];
+}
+
+export class HistogramChart extends React.Component<IHistogramProps> {
     public componentDidMount() {
-        const data = this.props.data;
-        const binData = this.binData(data);
-        const standardData = this.getNormalDistribution(data);
+        const binData = this.props.data;
+        const standardData = this.props.normalDistribution;
+        const mean = 6.2;
+
+        console.debug(binData);
+        console.debug(standardData);
+        // binData = this.binData(this.props.data as number[]);
+        // standardData = this.getNormalDistribution(this.props.data as number[]);
 
         const chart = Highcharts.chart('container', this.getOptions());
         chart.addSeries({
@@ -21,10 +33,6 @@ export class Histogram extends React.Component<IHistogramProps> {
             data: binData,
             type: 'column',
         });
-
-        const mean =
-            data.reduce((acc: number, value: number) => acc + value) /
-            data.length;
 
         chart.xAxis[0].addPlotLine({
             value: mean,
@@ -47,9 +55,7 @@ export class Histogram extends React.Component<IHistogramProps> {
     }
 
     private getNormalDistribution(data: number[]) {
-        const mean =
-            data.reduce((acc: number, value: number) => acc + value) /
-            data.length;
+        const mean = data.reduce((acc: number, value: number) => acc + value) / data.length;
         const std = Math.sqrt(
             data
                 .map((x: number) => x - mean)
@@ -62,8 +68,7 @@ export class Histogram extends React.Component<IHistogramProps> {
         const max = data.reduce((acc, x) => (acc > x ? acc : x));
         const unit = (max - min) / 100;
 
-        const normalY = (x: number, mu: number, sigma: number) =>
-            Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
+        const normalY = (x: number, mu: number, sigma: number) => Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
 
         return _.range(min, max, unit).map((x: number) => ({
             x,
@@ -75,12 +80,8 @@ export class Histogram extends React.Component<IHistogramProps> {
         const histData: any[] = [];
         const bins = 30;
 
-        const max = data.reduce((prev: number, current: number) =>
-            prev > current ? prev : current,
-        );
-        const min = data.reduce((prev: number, current: number) =>
-            prev < current ? prev : current,
-        );
+        const max = data.reduce((prev: number, current: number) => (prev > current ? prev : current));
+        const min = data.reduce((prev: number, current: number) => (prev < current ? prev : current));
         const range = max - min;
         const width = range / bins; // size of the bins
 
@@ -119,14 +120,8 @@ export class Histogram extends React.Component<IHistogramProps> {
             }
         });
 
-        const maxFreq = histData.reduce(
-            (acc: number, x: number[]) => (acc > x[1] ? acc : x[1]),
-            Number.MIN_VALUE,
-        );
-        const minFreq = histData.reduce(
-            (acc: number, x: number[]) => (acc < x[1] ? acc : x[1]),
-            Number.MAX_VALUE,
-        );
+        const maxFreq = histData.reduce((acc: number, x: number[]) => (acc > x[1] ? acc : x[1]), Number.MIN_VALUE);
+        const minFreq = histData.reduce((acc: number, x: number[]) => (acc < x[1] ? acc : x[1]), Number.MAX_VALUE);
 
         histData.forEach((value: number[], index: number) => {
             histData[index][1] = (value[1] - minFreq) / (maxFreq - minFreq);

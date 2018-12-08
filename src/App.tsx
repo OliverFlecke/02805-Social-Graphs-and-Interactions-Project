@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import * as styles from './App.module.scss';
 import { Navigation } from './components/Navigation';
-import AirportGraph from './images/airportgraph.png';
 import { Centrality } from './section/Centrality';
 import { Communities } from './section/Communities';
 import { Conclusion } from './section/Conclusion';
@@ -19,11 +18,9 @@ class App extends Component {
                     <Navigation />
 
                     <div className={styles.titleContainer}>
-                        <h1 className={styles.title}>
-                            The global airport network
-                        </h1>
+                        <h1 className={styles.title}>The global airport network</h1>
 
-                        <img src={AirportGraph} />
+                        <img src={`${process.env.PUBLIC_URL}/images/airportgraph.png`} />
                     </div>
 
                     <Introduction />

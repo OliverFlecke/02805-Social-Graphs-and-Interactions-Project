@@ -84,6 +84,7 @@
         "tabWidth": 4,
         "singleQuote": true,
         "arrowParens": "always",
-        "jsxSingleQuote": true
+        "jsxSingleQuote": true,
+        "printWidth": 120
     }
 }
