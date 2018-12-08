@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import React from 'react';
 import Slider from 'react-slick';
 import { Histogram } from '../components/Histogram';
@@ -7,27 +6,7 @@ import '../styles/Slick.scss';
 import { Section } from './Section';
 import * as styles from './styles/Sentiment.module.scss';
 
-interface ISentiment {
-    data?: any;
-    normal?: any;
-}
-
-export class Sentiment extends React.Component<{}, ISentiment> {
-    public constructor(props: any) {
-        super(props);
-
-        this.state = {};
-
-        Axios.get('data/sentiment_normalized.json').then((response: any) =>
-            this.setState({
-                data: response.data.series,
-            }),
-        );
-        Axios.get('data/normal_distribution.json').then((response: any) =>
-            this.setState({ normal: response.data.series }),
-        );
-    }
-
+export class Sentiment extends React.Component {
     public render() {
         return (
             <section id={Section.Sentiment}>
@@ -35,13 +14,12 @@ export class Sentiment extends React.Component<{}, ISentiment> {
 
                 {this.renderSlick()}
 
-                {this.state.data && this.state.normal ? (
-                    <Histogram
-                        data={this.state.data}
-                        normalDistribution={this.state.normal}
-                        title='Sentiment distribution'
-                    />
-                ) : null}
+                <Histogram
+                    title='Sentiment distribution'
+                    dataFile='data/sentiment_normalized.json'
+                    normalDistributionFile='data/normal_distribution.json'
+                    isBinned={true}
+                />
             </section>
         );
     }

@@ -1,57 +1,60 @@
-import * as Highcharts from 'highcharts';
-import * as _ from 'lodash';
+import Axios from 'axios';
+import _ from 'lodash';
 import React from 'react';
-import * as styles from './Histogram.module.scss';
+import { Point } from '../shared/Point';
+import { HistogramChart } from './HistogramChart';
 
-interface Point {
-    x: number;
-    y: number;
+interface HistogramProps {
+    dataFile: string;
+    title: string;
+    mean?: number;
+    isBinned?: boolean;
+    normalDistributionFile?: string;
 }
 
-interface IHistogramProps {
-    data: number[] | Point[];
-    title: string;
-    bins?: number;
-    isDataNormalized?: boolean;
+interface HistogramState {
+    data?: Point[];
     normalDistribution?: Point[];
 }
 
-export class HistogramChart extends React.Component<IHistogramProps> {
-    public componentDidMount() {
-        const binData = this.props.data;
-        const standardData = this.props.normalDistribution;
-        const mean = 6.2;
+export class Histogram extends React.Component<HistogramProps, HistogramState> {
+    constructor(props: HistogramProps) {
+        super(props);
 
-        console.debug(binData);
-        console.debug(standardData);
-        // binData = this.binData(this.props.data as number[]);
-        // standardData = this.getNormalDistribution(this.props.data as number[]);
+        this.state = {};
 
-        const chart = Highcharts.chart('container', this.getOptions());
-        chart.addSeries({
-            name: 'Distribution',
-            data: binData,
-            type: 'column',
+        Axios.get(this.props.dataFile).then((response: any) => {
+            let data = response.data.series;
+            if (!this.props.isBinned) {
+                data = this.binData(data);
+                this.setState({ data, normalDistribution: this.getNormalDistribution(data) });
+            } else {
+                this.setState({
+                    data,
+                });
+            }
         });
 
-        chart.xAxis[0].addPlotLine({
-            value: mean,
-            width: 1,
-            color: 'rgba(0,0,0,0.5)',
-            zIndex: 8,
-            label: {
-                text: `Mean ${mean.toPrecision(2)}`,
-            },
-        });
-
-        chart.addSeries({
-            data: standardData,
-            type: 'spline',
-        });
+        if (this.props.normalDistributionFile) {
+            Axios.get(this.props.normalDistributionFile).then((response: any) =>
+                this.setState({ normalDistribution: response.data.series }),
+            );
+        }
     }
 
     public render() {
-        return <div id='container' className={styles.container} />;
+        if (!this.state.data || !this.state.normalDistribution) {
+            return null;
+        }
+
+        return (
+            <HistogramChart
+                data={this.state.data}
+                normalDistribution={this.state.normalDistribution}
+                title={this.props.title}
+                mean={6.2}
+            />
+        );
     }
 
     private getNormalDistribution(data: number[]) {
@@ -128,56 +131,5 @@ export class HistogramChart extends React.Component<IHistogramProps> {
         });
 
         return histData;
-    }
-
-    private getOptions(): any {
-        return {
-            chart: {
-                margin: [50, 25, 25, 50],
-                backgroundColor: 'white',
-            },
-            title: {
-                text: this.props.title,
-            },
-            legend: {
-                enabled: false,
-            },
-            tooltip: {},
-            plotOptions: {
-                column: {
-                    pointPadding: 0,
-                    groupPadding: 0,
-                    borderWidth: 0.5,
-                    borderColor: 'rgba(255,255,255,0.5)',
-                    pointWidth: 15,
-                },
-                spline: {
-                    enableMouseTracking: false,
-                },
-            },
-            xAxis: [
-                {
-                    title: {
-                        text: 'Range',
-                    },
-                },
-                {
-                    linkedTo: 0,
-                    opposite: true,
-                    gridLineWidth: 0.5,
-                    gridLineColor: 'rgba(0,0,0,0.25)',
-                    gridZIndex: 8,
-                },
-            ],
-            yAxis: {
-                title: {
-                    text: 'Frequency',
-                },
-                min: 0,
-            },
-            credits: {
-                enabled: false,
-            },
-        };
     }
 }
