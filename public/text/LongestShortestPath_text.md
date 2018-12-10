@@ -1,0 +1,1 @@
+The longest shortest path goes from Portland Airport, Australia, to Peawanuch Airport, Canada, and has 12 connecting flights. This trip might very well have so many connecting flights due to the amount of airports one has to fly by in Canada, with a total of 6 of the 12 airports being located in the country.

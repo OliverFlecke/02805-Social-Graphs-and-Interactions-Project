@@ -8,6 +8,7 @@ export class LongestShortestPath extends React.Component {
             <section id={Section.Paths}>
                 <Markdown filename='LongestShortestPath.md' />
                 <img src={`${process.env.PUBLIC_URL}/images/longest_shortest_path.png`} style={{ boxShadow: 'none' }} />
+                <Markdown filename='LongestShortestPath_text.md' />
             </section>
         );
     }
