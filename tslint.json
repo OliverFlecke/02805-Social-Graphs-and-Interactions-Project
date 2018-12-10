@@ -9,7 +9,8 @@
         "quotemark": [true, "single", "jsx-single"],
         "prefer-template": true,
         "object-literal-sort-keys": false,
-        "interface-name": false
+        "interface-name": false,
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }

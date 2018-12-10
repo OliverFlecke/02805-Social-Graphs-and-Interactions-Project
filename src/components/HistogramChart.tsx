@@ -60,10 +60,12 @@ export class HistogramChart extends React.Component<IHistogramProps> {
                     borderWidth: 0.5,
                     borderColor: 'rgba(255,255,255,0.5)',
                     pointWidth: 15,
+                    color: '#87CEEB',
                 },
                 spline: {
                     enableMouseTracking: false,
                     marker: false,
+                    color: '#000',
                 },
             },
             xAxis: [

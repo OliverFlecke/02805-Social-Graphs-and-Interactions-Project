@@ -14,7 +14,9 @@
         "react-router-dom": "^4.3.1",
         "react-slick": "^0.23.2",
         "react-youtube": "^7.8.0",
-        "slick-carousel": "^1.8.1"
+        "sigma": "^1.2.1",
+        "slick-carousel": "^1.8.1",
+        "vis": "^4.21.0"
     },
     "scripts": {
         "lint-ts": "npx tslint --project tsconfig.json -c tslint.json",
@@ -50,6 +52,8 @@
         "@types/react-router-hash-link": "^1.2.0",
         "@types/react-slick": "^0.23.2",
         "@types/react-youtube": "^7.4.2",
+        "@types/sigmajs": "^1.0.27",
+        "@types/vis": "^4.21.8",
         "concurrently": "^4.1.0",
         "gh-pages": "^2.0.1",
         "husky": "^1.2.0",

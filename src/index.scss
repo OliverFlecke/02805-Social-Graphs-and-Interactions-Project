@@ -1,3 +1,5 @@
+@import 'styles/Colors.scss';
+
 body {
     margin: 0;
     padding: 0;
@@ -5,8 +7,7 @@ body {
         'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #ccc;
-    text-align: justify;
+    background-color: $backgroundColor;
 }
 
 section {
@@ -45,4 +46,15 @@ button {
     color: #4183d7;
     cursor: pointer;
     padding: 0;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-left: 2.5%;
 }

@@ -7,6 +7,7 @@ import { Communities } from './section/Communities';
 import { Conclusion } from './section/Conclusion';
 import { Data } from './section/Data';
 import { Introduction } from './section/Introduction';
+import { LongestShortestPath } from './section/LongestShortestPath';
 import { Network } from './section/Network';
 import { Sentiment } from './section/Sentiment';
 
@@ -18,9 +19,12 @@ class App extends Component {
                     <Navigation />
 
                     <div className={styles.titleContainer}>
-                        <h1 className={styles.title}>The global airport network</h1>
+                        <img
+                            src={`${process.env.PUBLIC_URL}/images/graphrendering-once.gif`}
+                            className={styles.imageGif}
+                        />
 
-                        <img src={`${process.env.PUBLIC_URL}/images/airportgraph.png`} />
+                        <h1 className={styles.title}>Airport Network Analysis</h1>
                     </div>
 
                     <Introduction />
@@ -28,6 +32,7 @@ class App extends Component {
                     <Network />
                     <Centrality />
                     <Communities />
+                    <LongestShortestPath />
                     <Sentiment />
                     <Conclusion />
                 </div>

@@ -19,11 +19,10 @@ export class Data extends React.Component<{}, DataState> {
         return (
             <section id={Section.Data}>
                 <Markdown filename={'Data.md'} />
-                <button onClick={this.onClickExpand}>
-                    {this.state.expanded ? 'Hide ' : 'Show '}
-                </button>{' '}
-                the full, more technical, description of the airport and routes
-                data set.
+                <p>
+                    <button onClick={this.onClickExpand}>{this.state.expanded ? 'Hide ' : 'Show '}</button> the full,
+                    more technical, description of the airport and routes data set.
+                </p>
                 {this.state.expanded ? (
                     <div>
                         <Markdown filename={'Airports.md'} />
