@@ -24,3 +24,5 @@ yarn-error.log*
 
 # scss type definitions
 *.scss.d.ts
+
+.ipynb_checkpoints
