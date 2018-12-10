@@ -7,18 +7,21 @@ import * as styles from './styles/Introduction.module.scss';
 export class Introduction extends React.Component {
     public render() {
         return (
-            <section id={Section.Introduction}>
-                <Markdown filename={'Introduction.md'} />
-                <div className={styles.videoContainer}>
-                    <YouTube
-                        videoId='pDUjlGqFPuQ'
-                        className={styles.video}
-                        opts={{
-                            playerVars: {
-                                iv_load_policy: 3,
-                            },
-                        }}
-                    />
+            <section>
+                <div id={Section.Introduction} />
+                <div className={'sectionContainer'}>
+                    <Markdown filename={'Introduction.md'} />
+                    <div className={styles.videoContainer}>
+                        <YouTube
+                            videoId='pDUjlGqFPuQ'
+                            className={styles.video}
+                            opts={{
+                                playerVars: {
+                                    iv_load_policy: 3,
+                                },
+                            }}
+                        />
+                    </div>
                 </div>
             </section>
         );

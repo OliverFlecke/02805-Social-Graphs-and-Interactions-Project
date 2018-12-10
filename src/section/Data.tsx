@@ -17,18 +17,21 @@ export class Data extends React.Component<{}, DataState> {
 
     public render() {
         return (
-            <section id={Section.Data}>
-                <Markdown filename={'Data.md'} />
-                <p style={{ margin: '0 2.5%' }}>
-                    <button onClick={this.onClickExpand}>{this.state.expanded ? 'Hide ' : 'Show '}</button> the full,
-                    more technical, description of the airport and routes data set.
-                </p>
-                {this.state.expanded ? (
-                    <div>
-                        <Markdown filename={'Airports.md'} />
-                        <Markdown filename={'Routes.md'} />
-                    </div>
-                ) : null}
+            <section>
+                <div id={Section.Data} />
+                <div className={'sectionContainer'}>
+                    <Markdown filename={'Data.md'} />
+                    <p style={{ margin: '0 2.5%' }}>
+                        <button onClick={this.onClickExpand}>{this.state.expanded ? 'Hide ' : 'Show '}</button> the
+                        full, more technical, description of the airport and routes data set.
+                    </p>
+                    {this.state.expanded ? (
+                        <div>
+                            <Markdown filename={'Airports.md'} />
+                            <Markdown filename={'Routes.md'} />
+                        </div>
+                    ) : null}
+                </div>
             </section>
         );
     }

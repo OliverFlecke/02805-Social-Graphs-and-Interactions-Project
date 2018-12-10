@@ -27,7 +27,7 @@ export class ImageSlider extends React.Component<ImageSliderProps> {
                 <Slider {...settings}>
                     {this.props.images.map((image: Image) => (
                         <div key={image.image} className={styles.itemContainer}>
-                            <h2 className={styles.title}>{image.title}</h2>
+                            <h3 className={styles.title}>{image.title}</h3>
                             <img src={`${process.env.PUBLIC_URL}/images/${image.image}`} className={styles.image} />
                             {image.text}
                         </div>

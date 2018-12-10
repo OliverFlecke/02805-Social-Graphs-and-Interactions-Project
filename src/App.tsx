@@ -4,8 +4,8 @@ import * as styles from './App.module.scss';
 import { Navigation } from './components/Navigation';
 import { Centrality } from './section/Centrality';
 import { Communities } from './section/Communities';
-import { Conclusion } from './section/Conclusion';
 import { Data } from './section/Data';
+import { Discussion } from './section/Discussion';
 import { Introduction } from './section/Introduction';
 import { LongestShortestPath } from './section/LongestShortestPath';
 import { Network } from './section/Network';
@@ -31,7 +31,7 @@ class App extends Component {
                     <Communities />
                     <LongestShortestPath />
                     <Sentiment />
-                    <Conclusion />
+                    <Discussion />
                 </div>
             </BrowserRouter>
         );

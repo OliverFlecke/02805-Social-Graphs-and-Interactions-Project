@@ -8,43 +8,48 @@ import { Section } from './Section';
 export class Sentiment extends React.Component {
     public render() {
         return (
-            <section id={Section.Sentiment}>
-                <Markdown filename={'Sentiment.md'} />
+            <section>
+                <div id={Section.Sentiment} />
+                <div className={'sectionContainer'}>
+                    <Markdown filename={'Sentiment.md'} />
 
-                <ImageSlider
-                    images={[
-                        {
-                            image: 'wordcloud.png',
-                            title: 'Words used in all of the tweets',
-                            text: <Markdown filename={'Wordcloud.md'} />,
-                        },
-                        {
-                            image: 'wordcloud_negative.png',
-                            title: 'Words used in negative tweets',
-                            text: <Markdown filename={'Wordcloud_negative.md'} />,
-                        },
-                        {
-                            image: 'wordcloud_positive.png',
-                            title: 'Words used in the positive tweets',
-                            text: <Markdown filename={'Wordcloud_positive.md'} />,
-                        },
-                    ]}
-                />
+                    <ImageSlider
+                        images={[
+                            {
+                                image: 'wordcloud.png',
+                                title: 'Words used in all of the tweets',
+                                text: <Markdown filename={'Wordcloud.md'} />,
+                            },
+                            {
+                                image: 'wordcloud_negative.png',
+                                title: 'Words used in negative tweets',
+                                text: <Markdown filename={'Wordcloud_negative.md'} />,
+                            },
+                            {
+                                image: 'wordcloud_positive.png',
+                                title: 'Words used in the positive tweets',
+                                text: <Markdown filename={'Wordcloud_positive.md'} />,
+                            },
+                        ]}
+                    />
 
-                <Histogram
-                    title='Sentiment distribution'
-                    dataFile='data/sentiment_normalized.json'
-                    normalDistributionFile='data/normal_distribution.json'
-                    isBinned={true}
-                />
+                    <Markdown filename={'SentimentDistribution.md'} />
 
-                <ImageSlider
-                    images={[
-                        { image: 'graph_absolute_sentiment.png', title: 'Absolute sentiment' },
-                        { image: 'graph_negative_sentiment_airports.png', title: 'Negative sentiment' },
-                        { image: 'graph_positive_sentiment_airports.png', title: 'Positive sentiment' },
-                    ]}
-                />
+                    <Histogram
+                        title='Sentiment distribution'
+                        dataFile='data/sentiment_normalized.json'
+                        normalDistributionFile='data/normal_distribution.json'
+                        isBinned={true}
+                    />
+
+                    <ImageSlider
+                        images={[
+                            { image: 'graph_absolute_sentiment.png', title: 'Absolute sentiment' },
+                            { image: 'graph_negative_sentiment_airports.png', title: 'Negative sentiment' },
+                            { image: 'graph_positive_sentiment_airports.png', title: 'Positive sentiment' },
+                        ]}
+                    />
+                </div>
             </section>
         );
     }

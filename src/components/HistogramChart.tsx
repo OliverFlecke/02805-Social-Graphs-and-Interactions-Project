@@ -12,7 +12,6 @@ interface IHistogramProps {
 
 export class HistogramChart extends React.Component<IHistogramProps> {
     public componentDidMount() {
-        console.debug(this.props.mean);
         const chart = Highcharts.chart('container', this.getOptions());
         chart.addSeries({
             name: 'Distribution',

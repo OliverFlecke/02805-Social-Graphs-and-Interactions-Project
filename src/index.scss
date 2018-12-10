@@ -23,8 +23,14 @@ code {
 }
 
 section {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.sectionContainer {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 5px;
 }
 
 td {
@@ -53,4 +59,20 @@ button {
 p {
     text-align: justify;
     margin: 0 auto;
+}
+
+#Data {
+    background-color: $backgroundColorSecondary;
+}
+
+#Centrality {
+    background-color: $backgroundColorSecondary;
+}
+
+#Paths {
+    background-color: $backgroundColorSecondary;
+}
+
+#Conclusion {
+    background-color: $backgroundColorSecondary;
 }

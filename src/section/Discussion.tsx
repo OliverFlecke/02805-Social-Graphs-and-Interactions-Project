@@ -1,15 +1,14 @@
 import React from 'react';
 import { Markdown } from '../components/Markdown';
 import { Section } from './Section';
-import './styles/Network.module.scss';
 
-export class Network extends React.Component {
+export class Discussion extends React.Component {
     public render() {
         return (
             <section>
-                <div id={Section.Network} />
+                <div id={Section.Discussion} />
                 <div className={'sectionContainer'}>
-                    <Markdown filename={'Network.md'} />
+                    <Markdown filename={'Discussion.md'} />
                 </div>
             </section>
         );

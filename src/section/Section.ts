@@ -6,5 +6,5 @@ export enum Section {
     Communities = 'Communities',
     Paths = 'Paths',
     Sentiment = 'Sentiment',
-    Conclusion = 'Conclusion',
+    Discussion = 'Discussion',
 }
