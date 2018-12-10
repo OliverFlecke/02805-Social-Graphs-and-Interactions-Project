@@ -2,7 +2,7 @@
 
 .sliderContainer {
     max-width: 85%;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 
 .title {
@@ -17,4 +17,9 @@
     display: flex;
     justify-content: center;
     position: relative;
+}
+
+.image {
+    box-shadow: none;
+    margin: 0 auto;
 }

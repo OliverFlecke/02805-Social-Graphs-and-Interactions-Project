@@ -13,9 +13,21 @@ export class Sentiment extends React.Component {
 
                 <ImageSlider
                     images={[
-                        { image: 'wordcloud.png', title: 'Words used in all of the tweets' },
-                        { image: 'wordcloud_negative.png', title: 'Words used in negative tweets' },
-                        { image: 'wordcloud_positive.png', title: 'Words used in the positive tweets' },
+                        {
+                            image: 'wordcloud.png',
+                            title: 'Words used in all of the tweets',
+                            text: <Markdown filename={'Wordcloud.md'} />,
+                        },
+                        {
+                            image: 'wordcloud_negative.png',
+                            title: 'Words used in negative tweets',
+                            text: <Markdown filename={'Wordcloud_negative.md'} />,
+                        },
+                        {
+                            image: 'wordcloud_positive.png',
+                            title: 'Words used in the positive tweets',
+                            text: <Markdown filename={'Wordcloud_positive.md'} />,
+                        },
                     ]}
                 />
 

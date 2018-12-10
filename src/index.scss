@@ -35,8 +35,10 @@ tr {
 }
 
 img {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
+    box-shadow: 0 0 35px rgba(0,0,0,0.2);
+    margin: 2.5%;
 }
 
 button {
@@ -50,11 +52,5 @@ button {
 
 p {
     text-align: justify;
-    text-justify: inter-word;
-    max-width: 95%;
     margin: 0 auto;
-}
-
-h1 {
-    margin-left: 2.5%;
 }

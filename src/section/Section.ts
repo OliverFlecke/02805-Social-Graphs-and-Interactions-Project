@@ -4,7 +4,7 @@ export enum Section {
     Network = 'Network',
     Centrality = 'Centrality',
     Communities = 'Communities',
-    LongestShortestPath = 'Longest Shortest Path',
+    Paths = 'Paths',
     Sentiment = 'Sentiment',
     Conclusion = 'Conclusion',
 }

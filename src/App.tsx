@@ -19,10 +19,7 @@ class App extends Component {
                     <Navigation />
 
                     <div className={styles.titleContainer}>
-                        <img
-                            src={`${process.env.PUBLIC_URL}/images/graphrendering-once.gif`}
-                            className={styles.imageGif}
-                        />
+                        <img src={`${process.env.PUBLIC_URL}/images/graphrendering.gif`} className={styles.imageGif} />
 
                         <h1 className={styles.title}>Airport Network Analysis</h1>
                     </div>
