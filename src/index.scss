@@ -1,5 +1,7 @@
 @import 'styles/Colors.scss';
 
+$headerFont: Vollkorn;
+
 body {
     margin: 0;
     padding: 0;
@@ -18,8 +20,35 @@ code {
     font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+h1 {
+    font-weight: 400;
+    font-family: $headerFont;
+}
+
+h2 {
+    font-weight: 300;
+    font-family: $headerFont;
+}
+
+h3 {
+    font-weight: 300;
+    font-family: $headerFont;
+}
+
 ::-webkit-scrollbar {
     display: none;
+}
+
+footer {
+    background: $navigation;
+    text-align: center;
+    padding: 25px;
+}
+
+footer a {
+    font-style: none;
+    text-decoration: none;
+    color: white;
 }
 
 section {
@@ -34,16 +63,19 @@ section {
 }
 
 td {
-    min-width: 100px;
+    min-width: 150px;
 }
-tr {
-    border: 1px solid black;
+table {
+    box-shadow: 0 0 35px rgba(0,0,0,0.2);
+    width: 100%;
+    margin: 10px 0;
 }
+
 
 img {
     width: 95%;
     height: 95%;
-    box-shadow: 0 0 35px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
     margin: 2.5%;
 }
 
@@ -73,6 +105,6 @@ p {
     background-color: $backgroundColorSecondary;
 }
 
-#Conclusion {
+#Discussion {
     background-color: $backgroundColorSecondary;
 }

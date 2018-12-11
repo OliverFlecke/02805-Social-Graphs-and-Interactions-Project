@@ -7,8 +7,7 @@ import * as styles from './styles/Introduction.module.scss';
 export class Introduction extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Introduction} />
+            <section id={Section.Introduction}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Introduction.md'} />
                     <div className={styles.videoContainer}>

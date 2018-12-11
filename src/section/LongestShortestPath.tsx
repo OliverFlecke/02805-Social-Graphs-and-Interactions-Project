@@ -5,8 +5,7 @@ import { Section } from './Section';
 export class LongestShortestPath extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Paths} />
+            <section id={Section.Paths}>
                 <div className={'sectionContainer'}>
                     <Markdown filename='LongestShortestPath.md' />
                     <img

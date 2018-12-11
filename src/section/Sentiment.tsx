@@ -8,8 +8,7 @@ import { Section } from './Section';
 export class Sentiment extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Sentiment} />
+            <section id={Section.Sentiment}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Sentiment.md'} />
 
@@ -41,6 +40,8 @@ export class Sentiment extends React.Component {
                         normalDistributionFile='data/normal_distribution.json'
                         isBinned={true}
                     />
+
+                    <Markdown filename={'MostAndLeastLikedAirports.md'} />
 
                     <ImageSlider
                         images={[

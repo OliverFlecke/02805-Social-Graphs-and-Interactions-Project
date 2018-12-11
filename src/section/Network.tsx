@@ -6,8 +6,7 @@ import './styles/Network.module.scss';
 export class Network extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Network} />
+            <section id={Section.Network}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Network.md'} />
                 </div>

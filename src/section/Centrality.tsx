@@ -6,8 +6,7 @@ import { Section } from './Section';
 export class Centrality extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Centrality} />
+            <section id={Section.Centrality}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Centrality.md'} />
 
