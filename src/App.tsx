@@ -37,6 +37,10 @@ class App extends Component {
                         <a href='https://nbviewer.jupyter.org/github/OliverFlecke/02805-Social-Graphs-and-Interactions-Project/blob/master/ExplainerNotebook.ipynb'>
                             Find more details in the explainer notebook.
                         </a>
+
+                        <a href='https://github.com/OliverFlecke/02805-Social-Graphs-and-Interactions-Project/blob/master/README.md'>
+                            Get the data and play around yourself
+                        </a>
                     </footer>
                 </div>
             </BrowserRouter>
