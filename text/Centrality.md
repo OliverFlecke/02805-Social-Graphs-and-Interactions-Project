@@ -1,1 +1,2 @@
 # Centrality
+Next we looked at different centrality measures of the network to get a better understanding of how the nodes are connected and which nodes are importent for transportation across the nodes. We chose 3 different centrality measures; the degree centrality, betweenness centrality and eigenvector centrality.

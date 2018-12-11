@@ -1,7 +1,7 @@
 # Network
 
 To get an idea of the number and relations of the routes in the network, we first had a look at the degree distribution for each of the airports.
-The loglog plot over the distribution makes it easier to see more significate differences between the frequency of the different degrees.
+The loglog plot over the distribution seen below makes it easier to see more significate differences between the frequency of the different degrees.
 
 ![Powerlaw plot of the degree distribution](images/powerlawplot.png)
 
