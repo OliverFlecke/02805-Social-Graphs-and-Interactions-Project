@@ -2,8 +2,10 @@
 
 ## Data
 
-All the data is downloaded from this [airport database](https://openflights.org/data.html).
-The descriptions of each of the columns in the data set can be seen here.
+The data set about the airports and the flight routes between them can be downloaded from [OpenFlights.org](https://openflights.org/data.html).
+Descriptions of each of the columns in the data set can be seen below.
+Furthermore, to analyze sentiment at each of the airports, tweets from Twitter have been extracted at each airport using the airports longitude and latitude to search for geo tags on tweets.
+These tweets was extracted through Twitters developer API on November 21 2018, and can be downloaded [here](https://1drv.ms/u/s!AoyV20xD2_Tx0vIuF0HGgFg-5CyaIw).
 
 ### Airports
 
