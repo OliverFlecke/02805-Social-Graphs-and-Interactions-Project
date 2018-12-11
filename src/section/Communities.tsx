@@ -6,8 +6,7 @@ import { Section } from './Section';
 export class Communities extends React.Component {
     public render() {
         return (
-            <section>
-                <div id={Section.Communities} />
+            <section id={Section.Communities}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Communities.md'} />
                     Below we can see various ways of seperating the different airports around the world into

@@ -17,11 +17,10 @@ export class Data extends React.Component<{}, DataState> {
 
     public render() {
         return (
-            <section>
-                <div id={Section.Data} />
+            <section id={Section.Data}>
                 <div className={'sectionContainer'}>
                     <Markdown filename={'Data.md'} />
-                    <p style={{ margin: '0 2.5%' }}>
+                    <p>
                         <button onClick={this.onClickExpand}>{this.state.expanded ? 'Hide ' : 'Show '}</button> the
                         full, more technical, description of the airport and routes data set.
                     </p>

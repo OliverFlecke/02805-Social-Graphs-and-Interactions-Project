@@ -1,9 +1,11 @@
+@import '../styles/Colors.scss';
+
 .nav {
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
-    background-color: #07889B;
+    background-color: $navigation;
     padding: 1em 0;
     z-index: 1000;
 }
