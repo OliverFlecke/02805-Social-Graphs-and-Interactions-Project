@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/02805-Social-Graphs-and-Interactions-Project/precache-manifest.5634e051befc5e883cb4633fcc430d96.js"
+  "/02805-Social-Graphs-and-Interactions-Project/precache-manifest.fc11a990a3497f6d3c9f10cf755a476b.js"
 );
 
 workbox.clientsClaim();
