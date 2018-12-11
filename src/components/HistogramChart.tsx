@@ -42,7 +42,7 @@ export class HistogramChart extends React.Component<IHistogramProps> {
     private getOptions(): any {
         return {
             chart: {
-                margin: [50, 25, 25, 50],
+                margin: [75, 25, 25, 50],
                 backgroundColor: 'white',
             },
             title: {

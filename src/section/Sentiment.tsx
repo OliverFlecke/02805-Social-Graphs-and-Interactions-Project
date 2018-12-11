@@ -45,9 +45,21 @@ export class Sentiment extends React.Component {
 
                     <ImageSlider
                         images={[
-                            { image: 'graph_absolute_sentiment.png', title: 'Absolute sentiment', text: <Markdown filename={'Sentiment_plot_abs.md'}/> },
-                            { image: 'graph_negative_sentiment_airports.png', title: 'Negative sentiment', text: <Markdown filename={'Sentiment_plot_min.md'}/> },
-                            { image: 'graph_positive_sentiment_airports.png', title: 'Positive sentiment', text: <Markdown filename={'Sentiment_plot_max.md'}/> },
+                            {
+                                image: 'graph_absolute_sentiment.png',
+                                title: 'Absolute sentiment',
+                                text: <Markdown filename={'Sentiment_plot_abs.md'} />,
+                            },
+                            {
+                                image: 'graph_negative_sentiment_airports.png',
+                                title: 'Negative sentiment',
+                                text: <Markdown filename={'Sentiment_plot_min.md'} />,
+                            },
+                            {
+                                image: 'graph_positive_sentiment_airports.png',
+                                title: 'Positive sentiment',
+                                text: <Markdown filename={'Sentiment_plot_max.md'} />,
+                            },
                         ]}
                     />
                 </div>

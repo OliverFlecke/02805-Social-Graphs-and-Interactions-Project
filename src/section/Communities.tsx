@@ -36,7 +36,10 @@ export class Communities extends React.Component {
                     structure that makes more sense to the human eye. Communities based on countries were also done, but
                     this doesn't really create good communities since many flights are international and therefore the
                     modularity will not be very high.
-                    <img src={`${process.env.PUBLIC_URL}/images/airportgraph_with_high_degree_hubs.png`} />
+                    <img
+                        src={`${process.env.PUBLIC_URL}/images/airportgraph_with_high_degree_hubs.png`}
+                        style={{ boxShadow: 'none' }}
+                    />
                     It turned out that the modularity of the best community partition was not very good. THe continent
                     community partition was almost as good as the best. In the above figure, the top ten hubs are marked
                     as red nodes and flights involving these are pink lines. It is clear that it is hard to get good
