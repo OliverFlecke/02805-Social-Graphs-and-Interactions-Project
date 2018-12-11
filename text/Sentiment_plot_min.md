@@ -1,1 +1,2 @@
-To getter a better look at the airports with more negative Twitter sentiment, we can change the size of our nodes in terms of how negative the sentiment is. Here it is more clear that the airports with more negative sentiment har placed in Northern Europe and Southern parts of and off the coast of Africa.
+To getter a better look at the airports with more negative Twitter sentiment, we can change the size of the nodes to be larger, if the sentiment is lower.
+Here it is more clear that the airports with more negative sentiment har placed in Northern Europe, Southern parts of Africa and off the coast of Africa.
