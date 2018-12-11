@@ -39,7 +39,7 @@ class App extends Component {
                         </a>
 
                         <a href='https://github.com/OliverFlecke/02805-Social-Graphs-and-Interactions-Project/blob/master/README.md'>
-                            Get the data and play around yourself
+                            Get the data and play around yourself.
                         </a>
                     </footer>
                 </div>
