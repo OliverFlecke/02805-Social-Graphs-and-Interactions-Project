@@ -7,4 +7,4 @@ These are all factors that can be considered when finding the best airports.
 
 Furthermore, a better data source than Twitter should be consided to analyze what people think of airports, as only small subset of travelers is tweeting from airports.
 For this project, only the 100 most recent tweets at a specific airport was used, which usually all was tweeted within a very short timespan.
-All this means that we only get a narrow and biased insight into people's oppion of the airports.
+All this means that we only get a narrow and biased insight into people's opinion of the airports.
