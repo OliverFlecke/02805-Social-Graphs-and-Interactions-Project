@@ -15,7 +15,7 @@ export class Centrality extends React.Component {
                         images={[
                             {
                                 image: 'graph_degree_size.png',
-                                title: 'Degree size',
+                                title: 'Degree Centrality',
                                 text:
                                     'Determining the node sizes based on node degrees gives an idea of how busy an airport is or at least number of different flight paths that connects the airport to the rest of the world. ',
                             },
@@ -33,6 +33,8 @@ export class Centrality extends React.Component {
                             },
                         ]}
                     />
+
+                    <Markdown filename={'Centrality_post_slider.md'}/>
                 </div>
             </section>
         );
