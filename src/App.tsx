@@ -21,7 +21,7 @@ class App extends Component {
                     <div className={styles.titleContainer}>
                         <img src={`${process.env.PUBLIC_URL}/images/graphrendering.gif`} className={styles.imageGif} />
 
-                        <h1 className={styles.title}>Airport Network Analysis</h1>
+                        <h1 className={styles.title}>Analyzing the Global Network of Airports</h1>
                     </div>
 
                     <Introduction />
@@ -34,7 +34,7 @@ class App extends Component {
                     <Discussion />
 
                     <footer>
-                        <a href='https://nbviewer.jupyter.org/github/OliverFlecke/02805-Social-Graphs-and-Interactions-Project/blob/master/ExplainerNotebook.ipynb'>
+                        <a href='https://github.com/OliverFlecke/02805-Social-Graphs-and-Interactions-Project/blob/master/ExplainerNotebook.ipynb'>
                             Find more details in the explainer notebook.
                         </a>
 
